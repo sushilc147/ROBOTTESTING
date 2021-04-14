@@ -9,7 +9,8 @@ agent any
         }
         stage('Execute Tests') {
             steps{
-                sh 'docker run -v ${PWD}/:/ROBOTTESTING/robot/ interworks/rfrunner'
+                sh 'docker-compose run robot'
+                //sh 'docker run -v ${PWD}/:/ROBOTTESTING/robot/ interworks/rfrunner'
             }
         }
         stage('Proccess Results') {		
