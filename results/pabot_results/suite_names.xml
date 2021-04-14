@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.2 (Python 3.7.10 on linux)" generated="20210414 07:50:07.015">
+<suite id="s1" name="Tests" source="/robot/tests">
+<suite id="s1-s1" name="Hello" source="/robot/tests/hello.robot">
+<kw name="Open Browser to" library="common" type="setup">
+<arguments>
+<arg>${SERVER}</arg>
+</arguments>
+<kw name="No Operation" library="BuiltIn">
+<doc>Does absolutely nothing.</doc>
+<status status="NOT_RUN" starttime="20210414 07:50:07.230" endtime="20210414 07:50:07.230"></status>
+</kw>
+<status status="PASS" starttime="20210414 07:50:07.229" endtime="20210414 07:50:07.230"></status>
+</kw>
+<test id="s1-s1-t1" name="Page Has Hello">
+<kw name="No Operation" library="BuiltIn">
+<doc>Does absolutely nothing.</doc>
+<status status="NOT_RUN" starttime="20210414 07:50:07.231" endtime="20210414 07:50:07.231"></status>
+</kw>
+<status status="PASS" starttime="20210414 07:50:07.230" endtime="20210414 07:50:07.231" critical="yes"></status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="NOT_RUN" starttime="20210414 07:50:07.232" endtime="20210414 07:50:07.232"></status>
+</kw>
+<status status="PASS" starttime="20210414 07:50:07.225" endtime="20210414 07:50:07.232"></status>
+</suite>
+<suite id="s1-s2" name="World" source="/robot/tests/world.robot">
+<kw name="Open Browser to" library="common" type="setup">
+<arguments>
+<arg>${SERVER}</arg>
+</arguments>
+<kw name="No Operation" library="BuiltIn">
+<doc>Does absolutely nothing.</doc>
+<status status="NOT_RUN" starttime="20210414 07:50:07.236" endtime="20210414 07:50:07.237"></status>
+</kw>
+<status status="PASS" starttime="20210414 07:50:07.236" endtime="20210414 07:50:07.237"></status>
+</kw>
+<test id="s1-s2-t1" name="Page Has World">
+<kw name="No Operation" library="BuiltIn">
+<doc>Does absolutely nothing.</doc>
+<status status="NOT_RUN" starttime="20210414 07:50:07.237" endtime="20210414 07:50:07.237"></status>
+</kw>
+<status status="PASS" starttime="20210414 07:50:07.237" endtime="20210414 07:50:07.237" critical="yes"></status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="NOT_RUN" starttime="20210414 07:50:07.238" endtime="20210414 07:50:07.238"></status>
+</kw>
+<status status="PASS" starttime="20210414 07:50:07.233" endtime="20210414 07:50:07.238"></status>
+</suite>
+<status status="PASS" starttime="20210414 07:50:07.016" endtime="20210414 07:50:07.239"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Hello">Tests.Hello</stat>
+<stat pass="1" fail="0" id="s1-s2" name="World">Tests.World</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210414 07:50:07.008" level="ERROR">Error in file '/robot/tests/hello.robot': Non-existing setting ''.</msg>
+<msg timestamp="20210414 07:50:07.009" level="ERROR">Error in file '/robot/tests/hello.robot': Non-existing setting ''.</msg>
+<msg timestamp="20210414 07:50:07.009" level="ERROR">Error in file '/robot/tests/hello.robot': Non-existing setting ''.</msg>
+<msg timestamp="20210414 07:50:07.009" level="ERROR">Error in file '/robot/tests/world.robot': Non-existing setting ''.</msg>
+<msg timestamp="20210414 07:50:07.009" level="ERROR">Error in file '/robot/tests/world.robot': Non-existing setting ''.</msg>
+<msg timestamp="20210414 07:50:07.010" level="ERROR">Error in file '/robot/tests/world.robot': Non-existing setting ''.</msg>
+<msg timestamp="20210414 07:50:07.045" level="ERROR">Error in file '/robot/resources/common.robot': Non-existing setting ''.</msg>
+</errors>
+</robot>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0.2 (Python 3.7.10 on linux)" generated="20210414 07:50:07.593">
+<suite id="s1" name="Tests" source="/robot/tests">
+<suite id="s1-s1" name="Hello" source="/robot/tests/hello.robot">
+<kw name="Open Browser to" library="common" type="setup">
+<arguments>
+<arg>${SERVER}</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${BROWSER}' == 'HeadlessChrome'</arg>
+<arg>Open Headless Chrome Browser to</arg>
+<arg>${location}</arg>
+<arg>ELSE IF</arg>
+<arg>'${BROWSER}' == 'HeadlessFirefox'</arg>
+<arg>Open Headless Firefox Browser to</arg>
+<arg>${location}</arg>
+<arg>ELSE</arg>
+<arg>Open Graphical Browser to</arg>
+<arg>${location}</arg>
+</arguments>
+<kw name="Open Headless Chrome Browser to" library="common">
+<arguments>
+<arg>${location}</arg>
+</arguments>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+</arguments>
+<assign>
+<var>${chrome_options}</var>
+</assign>
+<msg timestamp="20210414 07:50:07.894" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7f56f5eadbd0&gt;</msg>
+<status status="PASS" starttime="20210414 07:50:07.894" endtime="20210414 07:50:07.894"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+</arguments>
+<status status="PASS" starttime="20210414 07:50:07.894" endtime="20210414 07:50:07.895"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+</arguments>
+<status status="PASS" starttime="20210414 07:50:07.895" endtime="20210414 07:50:07.895"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+</arguments>
+<status status="PASS" starttime="20210414 07:50:07.895" endtime="20210414 07:50:07.895"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+</arguments>
+<status status="PASS" starttime="20210414 07:50:07.896" endtime="20210414 07:50:07.896"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+</arguments>
+<status status="PASS" starttime="20210414 07:50:07.896" endtime="20210414 07:50:07.896"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${chrome_options}</arg>
+</arguments>
+<msg timestamp="20210414 07:50:07.898" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20210414 07:50:07.897" endtime="20210414 07:50:10.499"></status>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<arguments>
+<arg>1920</arg>
+<arg>1080</arg>
+</arguments>
+<status status="PASS" starttime="20210414 07:50:10.500" endtime="20210414 07:50:10.659"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${location}</arg>
+</arguments>
+<msg timestamp="20210414 07:50:10.659" level="INFO">Opening url 'http://frontend'</msg>
+<status status="PASS" starttime="20210414 07:50:10.659" endtime="20210414 07:50:11.748"></status>
+</kw>
+<status status="PASS" starttime="20210414 07:50:07.893" endtime="20210414 07:50:11.753"></status>
+</kw>
+<status status="PASS" starttime="20210414 07:50:07.893" endtime="20210414 07:50:11.753"></status>
+</kw>
+<status status="PASS" starttime="20210414 07:50:07.892" endtime="20210414 07:50:11.753"></status>
+</kw>
+<test id="s1-s1-t1" name="Page Has Hello">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Hello</arg>
+</arguments>
+<msg timestamp="20210414 07:50:12.035" level="INFO">Current page contains text 'Hello'.</msg>
+<status status="PASS" starttime="20210414 07:50:11.755" endtime="20210414 07:50:12.035"></status>
+</kw>
+<status status="PASS" starttime="20210414 07:50:11.753" endtime="20210414 07:50:12.035" critical="yes"></status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210414 07:50:12.046" endtime="20210414 07:50:12.130"></status>
+</kw>
+<status status="PASS" starttime="20210414 07:50:07.885" endtime="20210414 07:50:12.130"></status>
+</suite>
+<status status="PASS" starttime="20210414 07:50:07.594" endtime="20210414 07:50:12.132"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Hello">Tests.Hello</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
