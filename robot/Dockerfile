@@ -3,7 +3,7 @@ FROM alpine:3.10.1
 # PYTHON
 RUN apk add --no-cache python3 py3-pip
 RUN pip3 install --upgrade pip
-RUN apt-get install docker-compose -y
+RUN yum install docker-compose -y
 
 # CHROME
 RUN apk --no-cache upgrade && apk add --no-cache chromium chromium-chromedriver
