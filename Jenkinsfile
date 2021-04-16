@@ -12,6 +12,7 @@ agent any
                 sh '''
                 docker-compose run robot
                 '''
+                sh '''cat pybot_stdout.out''' 
                 //sh 'docker run -v ${PWD}/:/ROBOTTESTING/robot/ interworks/rfrunner'
             }
         }
