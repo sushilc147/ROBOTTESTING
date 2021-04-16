@@ -9,7 +9,9 @@ agent any
         }
         stage('Execute Tests') {
             steps{
-                sh 'docker-compose up --build'
+                sh '''
+                docker-compose up --build
+                '''
                 //sh 'docker run -v ${PWD}/:/ROBOTTESTING/robot/ interworks/rfrunner'
             }
         }
@@ -31,7 +33,7 @@ agent any
                             otherFiles          : "**/*.png,**/*.jpg",
                         ]
                     )
-                emailext body: '${SCRIPT, template="robot.template"}', subject: "[Jenkins] Robot Framework testresults for Docker Demo Project", to: 'samplexempza@gmail.com', recipientProviders: [[$class: 'CulpritsRecipientProvider']], attachmentsPattern: 'results/results.zip'
+                emailext body: '${SCRIPT, template="robot.template"}', subject: "[Jenkins] Robot Framework testresults for Docker Demo Project", to: 'sushilc147a@gmail.com', recipientProviders: [[$class: 'CulpritsRecipientProvider']], attachmentsPattern: 'results/results.zip'
                 }
             }
         }
